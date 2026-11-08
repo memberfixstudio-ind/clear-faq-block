@@ -1,0 +1,90 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "clear-faq/faq",
+  "version": "1.0.0",
+  "title": "Clear FAQ",
+  "category": "text",
+  "icon": "editor-help",
+  "description": "Questions and answers that open and close. No JavaScript on the front end, keyboard friendly, with FAQ schema built in.",
+  "keywords": [
+    "faq",
+    "accordion",
+    "questions",
+    "toggle",
+    "schema"
+  ],
+  "textdomain": "clear-faq-block",
+  "attributes": {
+    "items": {
+      "type": "array",
+      "default": [
+        {
+          "question": "",
+          "answer": ""
+        }
+      ]
+    },
+    "design": {
+      "type": "string",
+      "default": "cards",
+      "enum": [
+        "cards",
+        "lines",
+        "minimal"
+      ]
+    },
+    "exclusive": {
+      "type": "boolean",
+      "default": true
+    },
+    "openFirst": {
+      "type": "boolean",
+      "default": false
+    },
+    "schema": {
+      "type": "boolean",
+      "default": true
+    },
+    "accent": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "anchor": true,
+    "color": {
+      "text": true,
+      "background": true
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true
+    },
+    "typography": {
+      "fontSize": true
+    }
+  },
+  "example": {
+    "attributes": {
+      "items": [
+        {
+          "question": "Do I need to know code?",
+          "answer": "No. Type your question, type your answer, and you are done."
+        },
+        {
+          "question": "Will it slow my site down?",
+          "answer": "No. It uses the browser's own open and close behaviour, so there is no JavaScript to load."
+        }
+      ]
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

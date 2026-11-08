@@ -1,0 +1,24 @@
+{
+  "name": "clear-faq-block",
+  "version": "1.0.0",
+  "description": "An accessible FAQ accordion block with built-in FAQ schema.",
+  "license": "GPL-2.0-or-later",
+  "private": true,
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "plugin-zip": "wp-scripts plugin-zip"
+  },
+  "files": [
+    "build",
+    "clear-faq-block.php",
+    "readme.txt",
+    "README.md"
+  ],
+  "devDependencies": {
+    "@wordpress/scripts": "^30.0.0"
+  },
+  "dependencies": {
+    "@wordpress/icons": "^20.0.0"
+  }
+}

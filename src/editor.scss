@@ -1,0 +1,140 @@
+// Editor only: every question is shown open so it can be edited in place.
+
+.wp-block-clear-faq-faq.is-editing {
+	.cfaq-edit-item {
+		position: relative;
+	}
+
+	.cfaq-edit-head {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		padding: 14px 14px 6px 18px;
+	}
+
+	.cfaq-question {
+		display: block;
+		flex: 1;
+		padding: 0;
+		text-align: left;
+		cursor: text;
+
+		&:hover {
+			color: inherit;
+		}
+	}
+
+	.cfaq-edit-number {
+		flex: none;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 26px;
+		height: 26px;
+		border-radius: 50%;
+		background: var(--cfaq-soft);
+		font-size: 12px;
+		font-weight: 600;
+		color: var(--cfaq-accent);
+	}
+
+	.cfaq-answer {
+		padding: 4px 22px 18px 56px;
+		min-height: 1.6em;
+	}
+
+	&.is-design-lines .cfaq-answer,
+	&.is-design-minimal .cfaq-answer {
+		padding-left: 42px;
+	}
+
+	&.is-design-minimal .cfaq-question {
+		flex-direction: row;
+	}
+
+	.cfaq-edit-tools {
+		display: flex;
+		gap: 2px;
+		opacity: 0;
+		transition: opacity 0.15s ease;
+	}
+
+	.cfaq-edit-item:hover .cfaq-edit-tools,
+	.cfaq-edit-item:focus-within .cfaq-edit-tools {
+		opacity: 1;
+	}
+
+	.cfaq-edit-footer {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		flex-wrap: wrap;
+		margin-top: 4px;
+	}
+
+	.cfaq-edit-notice {
+		margin: 0;
+	}
+}
+
+// Design picker in the sidebar.
+.cfaq-design-picker {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 8px;
+}
+
+.cfaq-design-option {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 6px;
+	padding: 8px 6px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	background: #fff;
+	font-size: 12px;
+	cursor: pointer;
+
+	&:hover {
+		border-color: #999;
+	}
+
+	&.is-selected {
+		border-color: var(--wp-admin-theme-color, #3858e9);
+		box-shadow: 0 0 0 1px var(--wp-admin-theme-color, #3858e9);
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--wp-admin-theme-color, #3858e9);
+		outline-offset: 1px;
+	}
+}
+
+.cfaq-design-preview {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	width: 100%;
+
+	span {
+		display: block;
+		height: 9px;
+		border-radius: 3px;
+		background: #e8e8ec;
+	}
+}
+
+.cfaq-design-option.is-lines .cfaq-design-preview span {
+	height: 8px;
+	border-radius: 0;
+	background: none;
+	border-bottom: 1px solid #c9c9d0;
+}
+
+.cfaq-design-option.is-minimal .cfaq-design-preview span {
+	width: 70%;
+	height: 4px;
+	margin: 2px 0;
+	background: #c9c9d0;
+}
