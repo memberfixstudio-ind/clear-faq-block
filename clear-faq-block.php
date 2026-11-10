@@ -11,6 +11,7 @@
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       clear-faq-block
+ * Domain Path:       /languages
  *
  * @package ClearFaqBlock
  */
@@ -21,7 +22,16 @@ defined( 'ABSPATH' ) || exit;
  * Register the block from its built block.json.
  */
 function clear_faq_block_register() {
-	register_block_type( __DIR__ . '/build' );
+	load_plugin_textdomain( 'clear-faq-block', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+
+	$block = register_block_type( __DIR__ . '/build' );
+
+	// Let the editor script use translated strings (JSON files from `wp i18n make-json`).
+	if ( $block && ! empty( $block->editor_script_handles ) ) {
+		foreach ( $block->editor_script_handles as $handle ) {
+			wp_set_script_translations( $handle, 'clear-faq-block', __DIR__ . '/languages' );
+		}
+	}
 }
 add_action( 'init', 'clear_faq_block_register' );
 
