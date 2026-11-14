@@ -1,5 +1,7 @@
 # Clear FAQ Block
 
+[Screenshots and step-by-step setup tutorial](https://memberfix.studio/plugins/clear-faq-block/)
+
 **A FAQ accordion for the block editor that's quick to fill in and light on your site.**
 
 ![Clear FAQ Block screenshot](.github/screenshot.png)
@@ -18,7 +20,7 @@
 
 ## Install
 
-1. Download the latest release ZIP, or clone this repository and run `npm install && npm run build`.
+1. Download this repository as a ZIP (**Code → Download ZIP**); the built block assets are included. Developers changing the source can run `npm install && npm run build`.
 2. Upload it in **Plugins → Add New → Upload Plugin** and activate it.
 3. In the editor, add the **Clear FAQ** block.
 
